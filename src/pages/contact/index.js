@@ -14,7 +14,7 @@ export default function Contact() {
       <Typography variant="h5" fontWeight="bold" textTransform="uppercase" textAlign="center">
         Contact me
       </Typography>
-      <Card sx={{ width: "100%", maxWidth: "700px", boxShadow: 3 }}>
+      <Card sx={{ width: "100%", maxWidth: "700px", boxShadow: 24 }}>
         <CardContent sx={{ display: "grid", gap: 2 }}>
 
           <TextField id="name" label="Name" variant="outlined"  fullWidth />

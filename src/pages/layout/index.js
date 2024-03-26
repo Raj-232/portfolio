@@ -1,69 +1,45 @@
 import * as React from 'react';
-import { AppBar, Box,  Drawer, Button, CssBaseline, IconButton, List, ListItem, ListItemButton, Toolbar, ListItemText, Stack, Avatar } from '@mui/material';
+import { AppBar, Box, Drawer, Button, CssBaseline, IconButton, List, ListItem, ListItemButton, Toolbar, ListItemText, Stack, Avatar, Link, Typography } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { IconBarsStaggered, IconMoonStars, IconSun } from '../../asstes/Icons';
+import { IconBarsStaggered, IconCareer, IconContacts, IconHome, IconMoonStars, IconProjects, IconSkills, IconSun } from '../../asstes/Icons';
 import me from '../../asstes/me.jfif'
 import useStore from '../../globalstate/store';
 const drawerWidth = 240;
 
 const navItems =
     [
-        { name: "Home", route: "/" },
-        { name: "Career", route: "/career" },
-        { name: "Skills", route: "/skills" },
-        { name: "Projects", route: "/projects" },
-        { name: "Contact", route: "/contact" },
+        { name: "Home", route: "/",icons:<IconHome/> },
+        { name: "Career", route: "/career" ,icons:<IconCareer/> },
+        { name: "Skills", route: "/skills" ,icons:<IconSkills/> },
+        { name: "Projects", route: "/projects",icons:<IconProjects/>  },
+        { name: "Contact", route: "/contact",icons:<IconContacts/>  },
     ]
 function Layout() {
     const { pathname } = useLocation()
-    const { setText} = useStore();
+    const { setText } = useStore();
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [value, setValue] = React.useState(0);
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
     const handleChngeTheme = () => {
- 
+
         const currentTheme = localStorage.getItem('theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         setText(newTheme)
         localStorage.setItem('theme', newTheme);
-       
-    }
-    const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            
-            <List>
-                {navItems.map((item, index) => (
-                    <ListItem key={index} >
-                        <ListItemButton
-                            component={RouterLink}
-                            to={item.route}
-                            sx={{
-                                textAlign: 'center',
-                                borderRadius: "10px",
-                                color: pathname === item.route ? 'white' : '',
-                                ":hover": {
-                                    background: "white",
-                                    color: "black"
-                                },
-                                backgroundColor: pathname === item.route ? "primary.main" : "transparent",
 
-                            }
-                            }>
-                            <ListItemText primary={item.name} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
-    );
+    }
 
 
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav">
+            <AppBar component="nav"
+                sx={{
+                    display: { xs: 'none', sm: 'block' },
+                }}>
                 <Toolbar>
                     <Box sx={{ flexGrow: 1, mr: 2, display: { sm: 'none' } }}>
 
@@ -123,27 +99,64 @@ function Layout() {
 
                 </Toolbar>
             </AppBar>
-            <nav>
-                <Drawer
-
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
+            <Box component="main" sx={{ width: "100dvw", height: "100dvh" }} >
+                <Box
+                    sx={{
+                        display: { xs: 'none', sm: 'block' },
+                    }}>
+                    <Toolbar />
+                </Box>
+                <Outlet />
+                <Box
                     sx={{
                         display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                >
-                    {drawer}
-                </Drawer>
-            </nav>
-            <Box component="main" sx={{ width: "100dvw", height: "100dvh" }} >
-                <Toolbar />
-                <Outlet />
+                    }}>
+                    <Toolbar />
+                </Box>
             </Box>
+            <AppBar component="nav"
+                sx={{
+                    top: 'auto',
+                    bottom: 0,
+                    display: { xs: 'block', sm: 'none' },
+                }}
+            >
+                <Toolbar>
+
+
+                    <Stack width="100%" direction="row" justifyContent="space-between" >
+                        {navItems.map((item, index) => (
+                            <Link
+                                key={index}
+                                component={RouterLink}
+                                to={item.route}
+
+                                underline="none"
+                                color='inherit'
+                                sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <Box sx={{background: pathname === item.route ? "rgba(255, 255, 255, 0.5)" : "transparent", px: 1, py: 0.5, borderRadius: 2, color: pathname === item.route ? 'black' : '', display: 'flex', justifyContent: 'center', alignItems: "center" }}>
+                                    {item.icons}
+                                </Box>
+
+
+
+                                <Typography variant='subtitle2'     color={`${pathname === item.route ? 'black' : ''}`}>
+                                    {item.name}
+                                </Typography>
+
+                            </Link>
+
+
+                        ))}
+                    </Stack >
+                </Toolbar>
+            </AppBar>
         </Box>
     );
 }

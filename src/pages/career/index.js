@@ -27,7 +27,7 @@ export default function Career() {
                         </TimelineSeparator>
                         <Grow in={true} timeout={1000}>
                         <TimelineContent>
-                            <Card sx={{ width: "100%", boxShadow: 3 }}>
+                            <Card sx={{ width: "100%", boxShadow: 24 }}>
                                 <CardContent component={CardActionArea}>
                                     
                                     <Typography fontWeight="bold">
@@ -65,6 +65,7 @@ export default function Career() {
                                         </Typography>
                                     </Stack>
                                 </CardContent>
+                                
                             </Card>
                         </TimelineContent>
                         </Grow>
@@ -77,7 +78,7 @@ export default function Career() {
                         </TimelineSeparator>
                         <Grow in={true} timeout={1000}>
                         <TimelineContent>
-                            <Card sx={{ width: "100%", boxShadow: 3 }}>
+                            <Card sx={{ width: "100%", boxShadow: 24 }}>
                             <CardContent component={CardActionArea}>
                                     <Typography fontWeight="bold">
                                         Graduate Innovation Engineer Trainee
@@ -138,7 +139,7 @@ export default function Career() {
                         </TimelineSeparator>
                         <Grow in={true} timeout={1000}>
                         <TimelineContent>
-                            <Card sx={{ width: "100%", boxShadow: 3 }}>
+                            <Card sx={{ width: "100%", boxShadow: 24 }}>
                             <CardContent component={CardActionArea}>
                                     <Typography fontWeight="bold">
                                         Computer Science Engineering
@@ -166,7 +167,7 @@ export default function Career() {
                         </TimelineSeparator>
                         <Grow in={true} timeout={1000}>
                         <TimelineContent>
-                            <Card sx={{ width: "100%", boxShadow: 3 }}>
+                            <Card sx={{ width: "100%", boxShadow: 24 }}>
                             <CardContent component={CardActionArea}>
                                     <Typography fontWeight="bold">
                                         HSC
@@ -193,7 +194,7 @@ export default function Career() {
                         </TimelineSeparator>
                         <Grow in={true} timeout={1000}>
                         <TimelineContent>
-                            <Card sx={{ width: "100%", boxShadow: 3 }}>
+                            <Card sx={{ width: "100%", boxShadow: 24 }}>
                             <CardContent component={CardActionArea}>
                                     <Typography fontWeight="bold">
                                         SSLC

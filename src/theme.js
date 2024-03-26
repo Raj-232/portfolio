@@ -8,9 +8,9 @@ export const Theme = ({ children }) => {
     const darkTheme = createTheme({
         palette: {
             mode: text,
-            // primary: {
-            //     main: '#02a3e8',
-            //   },
+            primary: {
+                main: '#009688',
+              },
         },
     });
 

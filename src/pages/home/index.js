@@ -79,7 +79,7 @@ export default function Home() {
       </Fade>
       <Grow in={trigger} >
       <Stack
-       padding={2}
+       padding={4}
         alignItems="center"
         spacing={2}>
         <Typography variant="h6" fontWeight="bold" textTransform="uppercase" component="div">

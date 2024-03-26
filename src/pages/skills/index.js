@@ -58,8 +58,8 @@ export default function Skills() {
         
     ]
     return (
-        <Stack spacing={4} padding={2}>
-            <Typography variant="h5" fontWeight="bold">CodingSkills</Typography>
+        <Stack spacing={1} padding={2}>
+            <Typography variant="h6" fontWeight="bold">CodingSkills</Typography>
          
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {
@@ -72,7 +72,7 @@ export default function Skills() {
                 }
     
             </Grid>
-            <Typography variant="h5" fontWeight="bold">ProfisionlsSkills</Typography>
+            <Typography variant="h6" fontWeight="bold">ProfisionlsSkills</Typography>
          
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {
