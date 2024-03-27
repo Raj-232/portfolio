@@ -1,33 +1,29 @@
 import * as React from 'react';
-import { AppBar, Box, Drawer, Button, CssBaseline, IconButton, List, ListItem, ListItemButton, Toolbar, ListItemText, Stack, Avatar, Link, Typography } from '@mui/material';
+import { AppBar, Box, Button, CssBaseline, IconButton, Toolbar, Stack, Avatar, Link, Typography } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { IconBarsStaggered, IconCareer, IconContacts, IconHome, IconMoonStars, IconProjects, IconSkills, IconSun } from '../../asstes/Icons';
+import { IconCareer, IconContacts, IconHome, IconMoonStars, IconProjects, IconSkills, IconSun } from '../../asstes/Icons';
 import me from '../../asstes/me.jfif'
 import useStore from '../../globalstate/store';
-const drawerWidth = 240;
+
 
 const navItems =
     [
-        { name: "Home", route: "/",icons:<IconHome/> },
-        { name: "Career", route: "/career" ,icons:<IconCareer/> },
-        { name: "Skills", route: "/skills" ,icons:<IconSkills/> },
-        { name: "Projects", route: "/projects",icons:<IconProjects/>  },
-        { name: "Contact", route: "/contact",icons:<IconContacts/>  },
+        { name: "Home", route: "/", icons: <IconHome /> },
+        { name: "Career", route: "/career", icons: <IconCareer /> },
+        { name: "Skills", route: "/skills", icons: <IconSkills /> },
+        { name: "Projects", route: "/projects", icons: <IconProjects /> },
+        { name: "Contact", route: "/contact", icons: <IconContacts /> },
     ]
 function Layout() {
     const { pathname } = useLocation()
-    const { setText } = useStore();
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-    const [value, setValue] = React.useState(0);
-    const handleDrawerToggle = () => {
-        setMobileOpen((prevState) => !prevState);
-    };
+    const { setMode } = useStore();
+
     const handleChngeTheme = () => {
 
         const currentTheme = localStorage.getItem('theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        setText(newTheme)
+        setMode(newTheme)
         localStorage.setItem('theme', newTheme);
 
     }
@@ -41,19 +37,6 @@ function Layout() {
                     display: { xs: 'none', sm: 'block' },
                 }}>
                 <Toolbar>
-                    <Box sx={{ flexGrow: 1, mr: 2, display: { sm: 'none' } }}>
-
-
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="start"
-                            onClick={handleDrawerToggle}
-
-                        >
-                            <IconBarsStaggered />
-                        </IconButton>
-                    </Box>
                     <Box
 
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
@@ -88,7 +71,7 @@ function Layout() {
                     </Stack >
                     <IconButton
                         id="basic-button"
-                        sx={{ color: '#fff' }}
+                        sx={{ color: '#fff',ml:2 }}
                         onClick={handleChngeTheme}
                     >
                         {
@@ -140,13 +123,13 @@ function Layout() {
                                     justifyContent: "center",
                                 }}
                             >
-                                <Box sx={{background: pathname === item.route ? "rgba(255, 255, 255, 0.5)" : "transparent", px: 1, py: 0.5, borderRadius: 2, color: pathname === item.route ? 'black' : '', display: 'flex', justifyContent: 'center', alignItems: "center" }}>
+                                <Box sx={{ background: pathname === item.route ? "rgba(255, 255, 255, 0.5)" : "transparent", px: 1, py: 0.5, borderRadius: 2, color: pathname === item.route ? 'black' : '', display: 'flex', justifyContent: 'center', alignItems: "center" }}>
                                     {item.icons}
                                 </Box>
 
 
 
-                                <Typography variant='subtitle2'     color={`${pathname === item.route ? 'black' : ''}`}>
+                                <Typography variant='subtitle2' >
                                     {item.name}
                                 </Typography>
 

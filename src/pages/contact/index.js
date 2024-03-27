@@ -1,4 +1,4 @@
-import {  Button, Card, CardContent, Link, Stack, TextField, Typography } from "@mui/material";
+import { Button, Card, CardContent, Link, Stack, TextField, Typography } from "@mui/material";
 import { IconGithub, IconLinkDin, IconMail, IconPhoneCall, IconWhatsapp } from "../../asstes/Icons";
 
 export default function Contact() {
@@ -17,10 +17,10 @@ export default function Contact() {
       <Card sx={{ width: "100%", maxWidth: "700px", boxShadow: 24 }}>
         <CardContent sx={{ display: "grid", gap: 2 }}>
 
-          <TextField id="name" label="Name" variant="outlined"  fullWidth />
-          <TextField id="email" label="Email" variant="outlined"  fullWidth />
+          <TextField id="name" label="Name" variant="outlined" fullWidth />
+          <TextField id="email" label="Email" variant="outlined" fullWidth />
 
-          <TextField id="subject" label="Email subject" variant="outlined"  fullWidth />
+          <TextField id="subject" label="Email subject" variant="outlined" fullWidth />
 
           <TextField
             id="outlined-multiline-flexible"
@@ -31,7 +31,7 @@ export default function Contact() {
             fullWidth
           />
           <Button variant="contained" >Submit</Button>
-          <Stack direction="row" justifyContent="space-between" padding={{sm:"5px 120px 0px 120px",xs:"10px"}}>
+          <Stack direction="row" justifyContent="space-between" padding={{ sm: "5px 120px 0px 120px", xs: "10px" }}>
             <Link href="https://wa.me/918925191383" target="_blank" underline="none" color="inherit">
               <IconWhatsapp />
             </Link>

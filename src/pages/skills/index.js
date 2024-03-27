@@ -17,8 +17,8 @@ function LinearProgressWithLabel(props) {
 
     return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Box sx={{ width: '100%', mr: 1  }}>
-                <LinearProgress variant="determinate" sx={{height:"8px", borderRadius:"10px"}} value={progress} />
+            <Box sx={{ width: '100%', mr: 1 }}>
+                <LinearProgress variant="determinate" sx={{ height: "8px", borderRadius: "10px" }} value={progress} />
             </Box>
             <Box sx={{ minWidth: 35 }}>
                 <Typography variant="body2" color="text.secondary">{`${Math.round(
@@ -50,17 +50,17 @@ export default function Skills() {
     ]
     const ProfisionlsSkills = [
         { name: "frontend development", value: 90 },
-        {name:"backend development",value:70},
-        {name:"mern stack development",value:70},
-        {name:"database development",value:70},
-        {name:".net development",value:70},
-        {name:"full stack development",value:70},
-        
+        { name: "backend development", value: 70 },
+        { name: "mern stack development", value: 70 },
+        { name: "database development", value: 70 },
+        { name: ".net development", value: 70 },
+        { name: "full stack development", value: 70 },
+
     ]
     return (
         <Stack spacing={1} padding={2}>
             <Typography variant="h6" fontWeight="bold">CodingSkills</Typography>
-         
+
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {
                     CodingSkills.map((data, index) => (
@@ -70,10 +70,10 @@ export default function Skills() {
                         </Grid>
                     ))
                 }
-    
+
             </Grid>
             <Typography variant="h6" fontWeight="bold">ProfisionlsSkills</Typography>
-         
+
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {
                     ProfisionlsSkills.map((data, index) => (
@@ -83,7 +83,7 @@ export default function Skills() {
                         </Grid>
                     ))
                 }
-    
+
             </Grid>
         </Stack>
     )

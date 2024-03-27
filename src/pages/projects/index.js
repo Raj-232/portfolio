@@ -9,8 +9,8 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { IconNetwork } from '../../asstes/Icons';
 export default function Projects() {
   return (
-    <Grid padding={2} container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-      <Grid xs={12} sm={6}  >
+    <Grid  container rowSpacing={2} padding={2} columnSpacing={{sm:2}}>
+      <Grid sm={6} xs={12}  >
         <Grow in={true} timeout={1000}>
           <Card sx={{ boxShadow: 24 }}>
             <CardActionArea>
@@ -60,7 +60,7 @@ export default function Projects() {
           </Card>
         </Grow>
       </Grid>
-      <Grid xs={12} sm={6}  >
+      <Grid sm={6} xs={12}  >
         <Grow in={true} timeout={1000}>
           <Card sx={{ boxShadow: 24 }}>
             <CardActionArea>
@@ -108,7 +108,7 @@ export default function Projects() {
           </Card>
         </Grow>
       </Grid>
-      <Grid xs={12} sm={6}  >
+      <Grid  sm={6} xs={12} >
         <Grow in={true} timeout={1000}>
           <Card sx={{ boxShadow: 24 }}>
             <CardActionArea>
@@ -158,7 +158,7 @@ export default function Projects() {
           </Card>
         </Grow>
       </Grid>
-      <Grid xs={12} sm={6}  >
+      <Grid  sm={6} xs={12} >
         <Grow in={true} timeout={1000}>
           <Card sx={{ boxShadow: 24 }}>
             <CardActionArea>
@@ -204,7 +204,7 @@ export default function Projects() {
           </Card>
         </Grow>
       </Grid>
-      <Grid xs={12} sm={6}  >
+      <Grid  sm={6} xs={12} >
         <Grow in={true} timeout={1000}>
           <Card sx={{ boxShadow: 24 }}>
             <CardActionArea>

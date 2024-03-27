@@ -7,8 +7,8 @@ else if(!localStorage.getItem('theme')){
     localStorage.setItem("theme","light")
 }
 const useStore = create((set) => ({
-  text: localStorage.getItem("theme"), // Initial empty string
-  setText: (newText) => set({ text: newText }), // Action to set the text
+  mode: localStorage.getItem("theme"), // Initial empty string
+  setMode: (newText) => set({ mode: newText }), // Action to set the text
 }));
 
 export default useStore;

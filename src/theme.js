@@ -4,10 +4,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import useStore from './globalstate/store';
 
 export const Theme = ({ children }) => {
-    const {text} =useStore();
+    const {mode} =useStore();
     const darkTheme = createTheme({
         palette: {
-            mode: text,
+            mode: mode,
             primary: {
                 main: '#009688',
               },

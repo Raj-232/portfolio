@@ -28,7 +28,7 @@ export default function Home() {
       width: "100%"
 
     }}>
-         <Fade in={true}  timeout={2000}>
+         <Fade in={true}  timeout={1000}>
       <Stack
         spacing={1}
         justifyContent="center"
@@ -77,7 +77,7 @@ export default function Home() {
        
       </Stack>
       </Fade>
-      <Grow in={trigger} >
+      <Grow in={trigger} timeout={1000}>
       <Stack
        padding={4}
         alignItems="center"
